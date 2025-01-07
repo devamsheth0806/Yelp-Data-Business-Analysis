@@ -1,5 +1,13 @@
 # Yelp-Data-Business-Analysis
-Predicting and Understanding Business Success with Yelp Data
+This project aims to use Yelp dataset to predict business success by leveraging a combination of Big Data Mining, Sentiment Analysis, and Topic Modeling. The primary goal is to identify patterns in customer reviews, evaluate business competitiveness, and determine the
+key factors influencing customer satisfaction. The motivation for the project is to provide business owners with deeper insights into their market performance, helping them optimize services and improve their competitive edge.
+
+## Features
+The Yelp dataset is a mine of information. Different forms of information can be extracted from it using various analysis methods. Following are a few ways in which information has been fetched from the Yelp dataset:
+1. Feature engineering with Sentiment analysis
+2. Machine learning methods like GBT and Naive Bayes for sentiment classification
+3. Sentiment Summarization using Gemini LLM
+4. Competitive Analysis using K-means
 
 ## Order of execution
 The following provides the order of execution of codes
