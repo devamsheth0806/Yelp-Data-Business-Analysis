@@ -54,32 +54,35 @@ Order of commands to execute files:
 	Command: `spark-submit --conf spark.executor.memory=8g --conf spark.driver.memory=8g --conf spark.executor.memoryOverhead=2g sentiment_summary.py`
 
 ### Competitive analysis using Kmeans
-1. Cluster training
+1. Cluster training:  
 	Command: `spark-submit --conf spark.executor.memory=8g --conf spark.driver.memory=8g --conf spark.executor.memoryOverhead=2g clustering_training.py`
 		
-2. Cluster Visualization:
+2. Cluster Visualization:  
 	Command: `spark-submit --conf spark.executor.memory=8g --conf spark.driver.memory=8g --conf spark.executor.memoryOverhead=2g clustering_visualization.py`
 
 ### RAG with LLM
-1. Install weaviate 
-	Commands: `wget https://github.com/weaviate/weaviate/releases/download/v1.25.27/weaviate-v1.25.27-linux-amd64.tar.gz`
+1. Install weaviate  
+	Commands:  
+	`wget https://github.com/weaviate/weaviate/releases/download/v1.25.27/weaviate-v1.25.27-linux-amd64.tar.gz`  
 	`tar -xvzf weaviate-v1.25.27-linux-amd64.tar.gz`
 
-2. Start weaviate: `./weaviate --tls-disabled`
-	Get Port number from the verbose of command line
+3. Start weaviate: `./weaviate --tls-disabled`  
+	- Get Port number from the verbose of command line
 	
-3. Create Schema and collections in Weaviate for business with reviews data and business category data
-	Commands: `python create_schema_weaviate.py`
+4. Create Schema and collections in Weaviate for business with reviews data and business category data
+	Commands:  
+	`python create_schema_weaviate.py`
 	`python create_schema_weaviate_categories.py`
 	
-4. Feed data into collections in weaviate
-	Commands: `spark-submit --conf spark.executor.memory=8g --conf spark.driver.memory=8g --conf spark.executor.memoryOverhead=2g feed_business_categories_to_weaviate.py`
+5. Feed data into collections in weaviate
+	Commands:  
+	`spark-submit --conf spark.executor.memory=8g --conf spark.driver.memory=8g --conf spark.executor.memoryOverhead=2g feed_business_categories_to_weaviate.py`  
 	`spark-submit --conf spark.executor.memory=8g --conf spark.driver.memory=8g --conf spark.executor.memoryOverhead=2g feed_business_categories_to_weaviate_categories.py`
 	
-5. Query weaviate (for debugging)
+6. Query weaviate (for debugging)
 	Commands: `python query_weaviate.py`
 	
-6. Use RAG with LLM:
+7. Use RAG with LLM:
 	- For a business review: `python RAG_LLM.py`
 	- For reviews of top n businesses within a category: `python RAG_LLM_category.py`
 	
